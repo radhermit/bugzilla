@@ -1,6 +1,7 @@
 FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV TZ=UTC
 
 RUN apt-get update && apt-get -y dist-upgrade
 RUN apt-get -y install \
@@ -49,6 +50,7 @@ RUN apt-get -y install \
  libgd-dev \
  libmysqlclient-dev \
  graphviz \
+ tzdata \
  vim-common
 
 WORKDIR /var/www/html
