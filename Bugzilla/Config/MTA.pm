@@ -22,7 +22,7 @@ sub get_param_list {
       name    => 'mail_delivery_method',
       type    => 's',
       choices => ['Sendmail', 'SMTP', 'Test', 'None'],
-      default => 'Sendmail',
+      default => 'None',
       checker => \&check_mail_delivery_method
     },
 
