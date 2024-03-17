@@ -5,7 +5,7 @@
 version: '3.4'
 
 services:
-  bugzilla5.web:
+  bugzilla5-web:
     build:
       context: .
       dockerfile: Dockerfile
@@ -19,13 +19,13 @@ services:
     ports:
       - 8080:80
     depends_on:
-      - bugzilla5.db
+      - bugzilla5-db
     environment: &bugzilla_env
       - BZ_ADMIN_EMAIL=bugbite@bugbite.test
       - BZ_ADMIN_PASSWORD=bugbite
       - BZ_ADMIN_REALNAME=Bugbite
       - BZ_URLBASE=http://127.0.0.1:8080/
-      - BZ_DB_HOST=bugzilla5.db
+      - BZ_DB_HOST=bugzilla5-db
       - BZ_DB_PORT=3306
       - BZ_DB_USER=bugs
       - BZ_DB_NAME=bugs
@@ -33,7 +33,7 @@ services:
       - MARIADB_ROOT_HOST=%
       - MARIADB_ROOT_PASSWORD=bugzilla
 
-  bugzilla5.db:
+  bugzilla5-db:
     build:
       context: .
       dockerfile: Dockerfile.mariadb
