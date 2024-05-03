@@ -16,8 +16,7 @@ the following settings:
 For use with bugbite either export the required settings in the shell:
 
 ```shell
-export BUGBITE_BASE="http://127.0.0.1:8080/"
-export BUGBITE_SERVICE="bugzilla"
+export BUGBITE_CONNECTION="bugzilla@http://127.0.0.1:8080/"
 export BUGBITE_USER="bugbite@bugbite.test"
 export BUGBITE_PASS="bugbite"
 
@@ -28,7 +27,7 @@ bite search -c 1d
 or pass the values to the related options:
 
 ```
-bite -b "http://127.0.0.1:8080/" -s bugzilla -u bugbite@bugbite.test -p bugbite search -c 1d
+bite -c "bugzilla@http://127.0.0.1:8080/" -u bugbite@bugbite.test -p bugbite search -c 1d
 ```
 
 [bugbite]: <https://github.com/radhermit/bugbite>
