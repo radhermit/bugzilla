@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y dist-upgrade
 RUN apt-get -y install \
     apache2 \
+    curl \
     graphviz \
     libapache2-mod-perl2 \
     libapache2-mod-perl2-dev \
