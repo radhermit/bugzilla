@@ -74,4 +74,4 @@ RUN rm -rf /var/www/html/data /var/www/html/localconfig /var/www/html/index.html
     mkdir /var/www/html/data
 RUN a2enmod expires && a2enmod headers && a2enmod rewrite && a2dismod mpm_event && a2enmod mpm_prefork
 EXPOSE 80/tcp
-CMD docker/startup.sh
+CMD ["/bin/bash", "/root/docker/startup.sh"]
