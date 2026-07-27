@@ -2,7 +2,6 @@
 
 [ -z "$BZ_DB_HOST" ] && echo "Missing Docker Environment, check docker-compose.yml" && exit -1
 cd /var/www/html
-apachectl start
 while :
 do
   echo "Waiting for database to be available..."
@@ -46,6 +45,9 @@ s@%%BZ_URLBASE%%@'${BZ_URLBASE//@/\\@}'@;
 " /root/docker/checksetup_answers.txt
 perl checksetup.pl /root/docker/checksetup_answers.txt
 echo "Checksetup completed."
+
+# start web server
+apachectl start
 
 LOGIN_USER="Admin user: $BZ_ADMIN_EMAIL"
 LOGIN_PASS="Admin password: $BZ_ADMIN_PASSWORD"
